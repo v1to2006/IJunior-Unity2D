@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Plants
     uniqueID: 709296835
+    locked: 0
+  - name: PlayZone
+    uniqueID: 3924296215
     locked: 0
