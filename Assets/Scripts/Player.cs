@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -18,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Move();
         Jump();
@@ -31,16 +30,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        const string ParameterJump = "IsJump";
+        const string ButtonJump = "Jump";
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown(ButtonJump) && IsGrounded())
         {
-            _rigidbody2D.AddForce(Vector2.up * _jumpForce);
-            _animator.SetBool(ParameterJump, true);
-        }
-        else
-        {
-            _animator.SetBool(ParameterJump, false);
+            _rigidbody2D.velocity = new Vector2(transform.position.x, _jumpForce * Time.deltaTime);
         }
     }
 
