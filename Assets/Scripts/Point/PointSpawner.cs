@@ -13,7 +13,9 @@ public class PointSpawner : MonoBehaviour
 
 	private void SpawnPoint()
 	{
-		Instantiate(_prefab, _spawnPoints[Random.Range(0, _spawnPoints.Length - 1)].position, Quaternion.identity);
+		Instantiate(_prefab,
+					_spawnPoints[Random.Range(0, _spawnPoints.Length - 1)].position,
+					Quaternion.identity);
 	}
 
 	private void OnDestroy()

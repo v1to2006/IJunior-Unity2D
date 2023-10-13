@@ -1,9 +1,9 @@
 using UnityEngine;
+using System;
 
 public class Point : MonoBehaviour
 {
-	public delegate void PointTaken();
-	public static event PointTaken OnPointTaken;
+	public static Action OnPointTaken;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
