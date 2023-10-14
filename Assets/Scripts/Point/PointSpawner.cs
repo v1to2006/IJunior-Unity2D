@@ -7,7 +7,7 @@ public class PointSpawner : MonoBehaviour
 
 	private void Awake()
 	{
-		Point.OnPointTaken += SpawnPoint;
+		Point.PointTaken += SpawnPoint;
 		SpawnPoint();
 	}
 
@@ -20,6 +20,6 @@ public class PointSpawner : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		Point.OnPointTaken -= SpawnPoint;
+		Point.PointTaken -= SpawnPoint;
 	}
 }
